@@ -6,8 +6,7 @@ export const timeline: TimeLineType[] = [
         descriptions: [`
         A website that presents articles in a simple format, using Markdown to make adding and writing articles
         easy, with different themes to keep the user engaged. Uses React.js for speed and TypeScript to improve
-        code quality.`,
-    'ofmwom'],
+        code quality.`],
         date: 'December 2023',
         links: [
             {

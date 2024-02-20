@@ -52,5 +52,29 @@ export const skills:SkillType[] = [
     {
         "title": "NuxtJS",
         "url": "https://raw.githubusercontent.com/vscode-icons/vscode-icons/master/icons/file_type_nuxt.svg"
+    },
+    {
+        "title": "Prisma",
+        "url": "https://raw.githubusercontent.com/vscode-icons/vscode-icons/master/icons/file_type_nuxt.svg"
+    }
+]
+
+
+export const tools:SkillType[] = [
+    {
+        "title": "Vs Code",
+        "url": "https://raw.githubusercontent.com/vscode-icons/vscode-icons/master/icons/file_type_html.svg"
+    },
+    {
+        "title": "Linux (arch, redhat)",
+        "url": "https://raw.githubusercontent.com/vscode-icons/vscode-icons/master/icons/file_type_html.svg"
+    },
+    {
+        "title": "Postman",
+        "url": "https://raw.githubusercontent.com/vscode-icons/vscode-icons/master/icons/file_type_html.svg"
+    },
+    {
+        "title": "vla",
+        "url": "https://raw.githubusercontent.com/vscode-icons/vscode-icons/master/icons/file_type_html.svg"
     }
 ]
