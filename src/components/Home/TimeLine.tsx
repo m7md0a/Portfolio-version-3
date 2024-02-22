@@ -3,6 +3,7 @@ import ContainerApp from '../ContainerApp'
 import Image from 'next/image'
 import { timeline } from '@/data/timeline'
 import { TimeLineType } from '@/types'
+import Title from './Title'
 
 
 const TimelineItem = ({title, descriptions, links, date}: TimeLineType) => (
@@ -37,7 +38,7 @@ export default function TimeLine() {
   return (
     <div className="bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] bg-opacity-20 bg-no-repeat bg-cover">
         <ContainerApp className="my-24">
-            <h2 className="text-3xl font-medium capitalize mb-8 text-center">My Experience</h2>
+            <Title title='My Experience'/>
             <div className="space-y-8 relative before:hidden md:before:block before:absolute before:inset-0 before:-ms-1.5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent">
                 {timeline.map(item => (
                     <TimelineItem key={item.title} date={item.date} title={item.title} descriptions={item.descriptions} links={item.links}/>

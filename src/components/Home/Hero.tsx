@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function Hero() {
   return (
-    <section className="hero -mt-28">
+    <section className="hero min-h-screen -mt-28">
         <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 z-10 relative">
           <div className="relative w-40 h-40 mx-auto mb-20">
             <Image width={350} height={350}
@@ -87,6 +87,7 @@ export default function Hero() {
           </form>
         </div>
         <div className="bg-gradient-to-b from-blue-50 to-transparent dark:from-blue-900 w-full h-full absolute top-0 left-0 z-0"></div>
+        <div className="h-20 w-1 bg-gray-100 rounded-full mx-auto my-14"></div>
       </section>
   )
 }

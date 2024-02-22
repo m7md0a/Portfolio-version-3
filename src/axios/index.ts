@@ -1,12 +1,16 @@
-import { RepoType } from "@/types";
+import { ProfileType, RepoType } from "@/types";
 import axios from "axios";
 
-async function getProfileData() {
-  let data;
-  await axios.get(`https://api.github.com/users/m7md0a`).then((res) => {
-    data = res.data;
-  });
-  return data;
+export async function getProfileData(): Promise<ProfileType | undefined> {
+  try {
+    let data;
+    await axios.get(`https://api.github.com/users/m7md0a`).then((res) => {
+      data = res.data;
+    });
+    return data;
+  } catch (error) {
+    return undefined
+  }
 }
 
 async function getAbout() {

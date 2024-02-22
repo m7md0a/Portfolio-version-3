@@ -127,3 +127,21 @@ export type RepoType = {
     url: string;
   }
   
+
+export type ProfileType = {
+  login: string
+  avatar_url: string
+  html_url: string
+  name: string
+  company: string | null
+  blog: string
+  location: string
+  email: string | null
+  hireable: string | null
+  bio: string
+  twitter_username: string | null
+  public_repos: number
+  public_gists: number
+  followers: number
+  following: number
+}
