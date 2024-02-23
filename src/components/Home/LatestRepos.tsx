@@ -38,7 +38,7 @@ export default async function LatestRepos() {
                 ))}
               </div>
               <div className="flex gap-x-6 text-xs mt-2 -mb-2 items-center">
-                <div className="text-indigo-500 flex items-center gap-x-2">
+                <div className="text-indigo-500 flex items-center gap-x-2 font-medium">
                   <span className='w-2 h-2 rounded-full bg-purple-500'></span>
                   <span>{repo.language}</span>
                 </div>
