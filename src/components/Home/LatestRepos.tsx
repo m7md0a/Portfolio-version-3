@@ -32,7 +32,7 @@ export default async function LatestRepos() {
                 <h2 className="font-semibold text-blue-500">{repo.full_name}</h2>
               </a>
               <p className="text-sm line-clamp-2 text-black/60">{repo.description}</p>
-              <div className='flex flex-wrap gap-x-2'>
+              <div className='flex flex-wrap gap-2'>
                 {repo.topics?.map(topic => (
                   <span key={topic} className='px-3 py-1 bg-black/5 text-gray-600 rounded-full text-xs'>{topic}</span>
                 ))}
