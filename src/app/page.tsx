@@ -21,15 +21,15 @@ export default async function page() {
       {/* <MyCom /> */}
       <Skills />
       <TimeLine />
-      {/* <LatestRepos /> */}
+      <LatestRepos />
       <Thanks />
-      <ContainerApp className="flex max-w-[95rem] min-h-screen">
+      {/* <ContainerApp className="flex max-w-[95rem] min-h-screen">
         <div className="hidden lg:flex justify-center items-center w-1/5 sticky top-0 left-0 h-screen">
-          {/* <Aside /> */}
+          <Aside />
         </div>
         <div className="lg:w-4/5 lg:pt-24">
         </div>
-      </ContainerApp>
+      </ContainerApp> */}
     </div>
   );
 }

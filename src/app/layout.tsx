@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en" dir="ltr">
       <body className={inter.className}>
         <NextTopLoader color='red' />
-        {/* <Header /> */}
+        <Header />
         <div className="pt-20">
           {children}
         </div>
