@@ -29,7 +29,7 @@ export default function SkillsItems({skills}: {skills: SkillType[]}) {
     variants={container}
     initial="hidden"
     animate="visible"
-    className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-3 gap-3 w-full text-gray-800 px-1 py-3">
+    className="grid grid-cols-3 gap-3 w-full text-gray-800 px-1 py-3">
         {skills.map(skill => (
             <motion.li key={skill.title} className="flex flex-col items-center" variants={item}>
                 <Image src={skill.url} width={30} height={30} alt={skill.title} key={skill.title} />
