@@ -2,7 +2,12 @@
 const nextConfig = {
     reactStrictMode: true,
     images: {
-        domains: ['m-abdelrahman.vercel.app', 'raw.githubusercontent.com', 'avatars.githubusercontent.com']
+        domains: [
+            'm-abdelrahman.vercel.app',
+            'raw.githubusercontent.com',
+            'avatars.githubusercontent.com',
+            'upload.wikimedia.org'
+        ]
     }
 };
 

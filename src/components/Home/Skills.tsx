@@ -1,4 +1,4 @@
-import { skills, tools } from '@/data/skills'
+import { backEnd, frontEnd, os, tools } from '@/data/skills'
 import ContainerApp from '../ContainerApp'
 import SkillsItems from './SkillsItems'
 import Title from './Title'
@@ -15,7 +15,7 @@ export default function Skills() {
                     <span className='text-white mobile-header-2-semibold'>Front End</span>
                   </span>
                   <div className='flex flex-wrap mt-7 px-1 pb-5'>
-                    <SkillsItems skills={skills}/>
+                    <SkillsItems skills={frontEnd}/>
                   </div>
                 </div>
               </div>
@@ -27,7 +27,7 @@ export default function Skills() {
                     <span className='text-white mobile-header-2-semibold'>Back End</span>
                   </span>
                   <div className='flex flex-wrap mt-7 px-1 pb-5'>
-                  <SkillsItems skills={tools}/>
+                  <SkillsItems skills={backEnd}/>
                   </div>
                 </div>
               </div>
@@ -37,7 +37,7 @@ export default function Skills() {
                     <span className='text-white mobile-header-2-semibold'>Tools</span>
                   </span>
                   <div className=''>
-                  <SkillsItems skills={skills}/>
+                  <SkillsItems skills={tools}/>
                   </div>
                 </div>
               </div>
@@ -46,10 +46,10 @@ export default function Skills() {
               <div className='flex flex-col nowrap'>
                 <div  className='mt-16 h-auto rounded-2xl bg-white drop-shadow-md'>
                   <span className='flex items-center mx-auto mt-[-1.438rem] w-max rounded-xl py-3 px-5 text-center bg-black pointer-events-none'>
-                    <span className='text-white mobile-header-2-semibold'>Oprating System</span>
+                    <span className='text-white mobile-header-2-semibold'>Oprating Systems</span>
                   </span>
                   <div className='flex flex-wrap mt-7 px-1 pb-5'>
-                  <SkillsItems skills={tools}/>
+                  <SkillsItems skills={os}/>
                   </div>
                 </div>
               </div>
