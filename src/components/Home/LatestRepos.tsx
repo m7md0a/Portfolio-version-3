@@ -25,7 +25,7 @@ export default async function LatestRepos() {
     <ContainerApp >
         <Title title='Latest Repos'/>
         <div className="grid md:grid-cols-2 gap-2">
-          {repos.slice(0, 5).map(repo => (
+          {repos.slice(0, 6).map(repo => (
             <div key={repo.id} className="bg-white border space-y-1 rounded p-4 hover:border-blue-500 duration-200">
               {/* // <Image width={50} height={50} alt="d" src={`https://raw.githubusercontent.com/m7md0a/Portfolio-By-Nextjs/main/screenshot.webp`} /> */}
               <a href={repo.html_url}>
