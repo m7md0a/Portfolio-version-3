@@ -15,7 +15,7 @@ import Image from 'next/image'
                 </svg>
                 <blockquote>
                     <p className="text-2xl font-medium text-gray-900 dark:text-white">&quot;
-                    Hello i&apos;m Mohamed Abdelrahman Web Designer from Elminya - Egypt, I have rich experience in web site design and building, also i am good at ReactJs and NextJs, I love to talk with you about our unique. i help you build brand for your business"</p>
+                    Hello i&apos;m Mohamed Abdelrahman Web Designer from Elminya - Egypt, I have rich experience in web site design and building, also i am good at ReactJs and NextJs, I love to talk with you about our unique. i help you build brand for your business&quot;</p>
                 </blockquote>
                 <figcaption className="flex items-center justify-center mt-6 space-x-3 rtl:space-x-reverse">
                     <Image width={40} height={40} className="w-6 h-6 rounded-full" src="https://avatars.githubusercontent.com/54208900" alt="profile picture" />
