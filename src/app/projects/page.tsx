@@ -4,7 +4,7 @@ import matter from 'gray-matter'
 import Link from 'next/link'
 import FilterProjects from './_components/FilterProjects'
 
-export default function UDnjnjn ({
+export default async function UDnjnjn ({
   searchParams
 }: {
   searchParams: { [key: string]: string | string[] | undefined }
