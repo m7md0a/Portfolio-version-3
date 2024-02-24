@@ -4,14 +4,21 @@ import matter from 'gray-matter'
 import Link from 'next/link'
 import FilterProjects from './_components/FilterProjects'
 
-export default function UDnjnjn({searchParams}: {searchParams : {name: string | undefined}}) {
+export default function UDnjnjn ({
+  searchParams
+}: {
+  searchParams: { [key: string]: string | string[] | undefined }
+}) {
+  const hamo = typeof searchParams.name === 'string' ? searchParams.name : undefined
+
   function name() {
-    if (typeof searchParams.name === 'string') {
-      console.log(searchParams.name)
-    }
+    
     // else {
     //   return 'all'
     // }
+    if (hamo) {
+      return hamo
+    }
     return 'all'
   }
   const projectsDir  = "public/projects";
