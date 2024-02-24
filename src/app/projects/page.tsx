@@ -4,7 +4,7 @@ import matter from 'gray-matter'
 import Link from 'next/link'
 import FilterProjects from './_components/FilterProjects'
 
-export default function Home({searchParams}: {searchParams : {name: string | undefined}}) {
+export default  function Home({searchParams}: {searchParams : {name: string | undefined}}) {
   const projectsDir  = "public/projects";
   const files = fs.readdirSync(path.join(projectsDir));
 
@@ -18,8 +18,9 @@ export default function Home({searchParams}: {searchParams : {name: string | und
   })
 
   const filterProjects = () => {
-    if (searchParams.name) {
-      const name = searchParams?.name?.trimStart().toLowerCase();
+    const name = searchParams?.name
+    if (typeof name === 'string') {
+      name.trimStart().toLowerCase();
       const filteredProjects = projects.filter(project => {
         return project.meta.tec.some(function(tec: string) {
           return tec.includes(name);
@@ -37,7 +38,8 @@ export default function Home({searchParams}: {searchParams : {name: string | und
     }
   }
   
-  return (
+  let ppp = filterProjects()
+  return ppp && (
    <main className='flex flex-col'>
     <h1 className='text-3xl font-bold'>
       My Next.Js projects Site
@@ -49,7 +51,7 @@ export default function Home({searchParams}: {searchParams : {name: string | und
     </h2>
     <FilterProjects />
     <div className='py-2'>
-      {filterProjects().map((project: any) =>(
+      {ppp.map((project: any) =>(
         <Link href={'/projects/' + project.slug} passHref key={project.slug}>
           <div className='py-2 flex justify-between align-middle gap-2'>
             <div>
