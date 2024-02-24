@@ -19,17 +19,18 @@ export default function Home({searchParams}: {searchParams : {name: string | und
   })
 
   const filterProjects = () => {
-    const filteredProjects = projects.filter(project => {
-      return project.meta.tec.some(function(tec: string) {
-        return tec.includes(name);
-      });
-    })      
-    if (filteredProjects.length > 0) {
-      return filteredProjects
-    }
-    else {
-      return projects.reverse()
-    }
+    // const filteredProjects = projects.filter(project => {
+    //   return project.meta.tec.some(function(tec: string) {
+    //     return tec.includes(name);
+    //   });
+    // })      
+    // if (filteredProjects.length > 0) {
+    //   return filteredProjects
+    // }
+    // else {
+    //   return projects.reverse()
+    // }
+    return projects.reverse()
   }
   
   return (

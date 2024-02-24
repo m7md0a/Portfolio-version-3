@@ -6,7 +6,7 @@ import { notFound } from 'next/navigation';
 import MarkdownContent from './_components/MarkdownContent';
 
 function getProject(name :string){
-    const projectsDir  = "public/projects/";
+    const projectsDir  = "public/projects";
     try {
         const markdownFile = fs.readFileSync(path.join(projectsDir, name + '.mdx'), 'utf-8')
         const{data: fontMatter, content} = matter(markdownFile)
