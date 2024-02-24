@@ -4,8 +4,8 @@ import matter from 'gray-matter'
 import Link from 'next/link'
 import FilterProjects from './_components/FilterProjects'
 
-// export default function Home({searchParams}: {searchParams : {name: string | undefined}}) {
-export default function Home() {
+export default function Home({searchParams}: {searchParams : {name: string | undefined}}) {
+// export default function Home() {
   // const name = searchParams?.name?.trimStart().toLowerCase() || 'all';  
   const projectsDir  = "public/projects";
   const files = fs.readdirSync(path.join(projectsDir));
