@@ -5,7 +5,6 @@ import Link from 'next/link'
 import FilterProjects from './_components/FilterProjects'
 
 export default function Home({searchParams}: {searchParams : {name: string | undefined}}) {
-  const name = searchParams?.name?.trimStart().toLowerCase() || 'all';  
   const projectsDir  = "public/projects";
   const files = fs.readdirSync(path.join(projectsDir));
 
@@ -19,13 +18,19 @@ export default function Home({searchParams}: {searchParams : {name: string | und
   })
 
   const filterProjects = () => {
-    const filteredProjects = projects.filter(project => {
-      return project.meta.tec.some(function(tec: string) {
-        return tec.includes(name);
-      });
-    })      
-    if (filteredProjects.length > 0) {
-      return filteredProjects
+    if (searchParams.name) {
+      const name = searchParams?.name?.trimStart().toLowerCase();
+      const filteredProjects = projects.filter(project => {
+        return project.meta.tec.some(function(tec: string) {
+          return tec.includes(name);
+        });
+      })      
+      if (filteredProjects.length > 0) {
+        return filteredProjects
+      }
+      else {
+        return projects.reverse()
+      }
     }
     else {
       return projects.reverse()
