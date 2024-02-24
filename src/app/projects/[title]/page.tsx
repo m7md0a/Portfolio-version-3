@@ -5,14 +5,25 @@ import { Params } from 'next/dist/shared/lib/router/utils/route-matcher';
 import { notFound } from 'next/navigation';
 import MarkdownContent from './_components/MarkdownContent';
 
-function getProject(name :string){
-    const projectsDir  = "public/projects/";
+
+const projectsDir  = "public/projects/";
+
+
+export async function generateStaticParams(){
+    const files =fs.readdirSync(path.join(projectsDir))
+    const paths = files.map(filename => ({
+        title: filename.replace('.mdx', '')
+    }))
+    return paths
+}
+
+function getProject(title :string){
     try {
-        const markdownFile = fs.readFileSync(path.join(projectsDir, name + '.mdx'), 'utf-8')
+        const markdownFile = fs.readFileSync(path.join(projectsDir, title + '.mdx'), 'utf-8')
         const{data: fontMatter, content} = matter(markdownFile)
         return {
             fontMatter,
-            name,
+            title,
             content
         }
     } catch (error) {
