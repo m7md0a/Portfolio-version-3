@@ -6,13 +6,13 @@ import FilterProjects from './_components/FilterProjects'
 
 export default function UDnjnjn({searchParams}: {searchParams : {name: string | undefined}}) {
   function name() {
-    // if (typeof searchParams.name === 'string') {
-    //   return searchParams?.name?.trimStart().toLowerCase()
-    // }
-    // else {
-    //   return 'all'
-    // }
-    return 'all'
+    if (typeof searchParams.name === 'string') {
+      return searchParams?.name?.trimStart().toLowerCase()
+    }
+    else {
+      return 'all'
+    }
+    // return 'all'
   }
   const projectsDir  = "public/projects";
   const files = fs.readdirSync(path.join(projectsDir));
