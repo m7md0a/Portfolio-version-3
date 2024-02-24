@@ -42,7 +42,7 @@ export default function Home({searchParams}: {searchParams : {name: string | und
   return (
    <main className='flex flex-col'>
     <h1 className='text-3xl font-bold'>
-      My Next.Js projects Site {name}
+      My Next.Js projects Site {name()}
     </h1>
 
     <section className='py-10'>
