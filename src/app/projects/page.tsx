@@ -4,7 +4,9 @@ import matter from 'gray-matter'
 import Link from 'next/link'
 import FilterProjects from './_components/FilterProjects'
 
-export default  function Home({searchParams}: {searchParams : {name: string | undefined}}) {
+export default function Home({searchParams}: {searchParams : {name: string | undefined}}) {
+// export default function Home() {
+  const name = searchParams?.name?.trimStart().toLowerCase() || 'all';  
   const projectsDir  = "public/projects";
   const files = fs.readdirSync(path.join(projectsDir));
 
@@ -17,32 +19,24 @@ export default  function Home({searchParams}: {searchParams : {name: string | un
     }
   })
 
-  const filterProjects = () => {
-    const name = searchParams?.name
-    if (typeof name === 'string') {
-      name.trimStart().toLowerCase();
-      const filteredProjects = projects.filter(project => {
-        return project.meta.tec.some(function(tec: string) {
-          return tec.includes(name);
-        });
-      })      
-      if (filteredProjects.length > 0) {
-        return filteredProjects
-      }
-      else {
-        return projects.reverse()
-      }
-    }
-    else {
-      return projects.reverse()
-    }
-  }
+  // const filterProjects = () => {
+  //   const filteredProjects = projects.filter(project => {
+  //     return project.meta.tec.some(function(tec: string) {
+  //       return tec.includes(name);
+  //     });
+  //   })      
+  //   if (filteredProjects.length > 0) {
+  //     return filteredProjects
+  //   }
+  //   else {
+  //     return projects.reverse()
+  //   }
+  // }
   
-  let ppp = filterProjects()
-  return ppp && (
+  return (
    <main className='flex flex-col'>
     <h1 className='text-3xl font-bold'>
-      My Next.Js projects Site
+      My Next.Js projects Site {name}
     </h1>
 
     <section className='py-10'>
@@ -51,7 +45,7 @@ export default  function Home({searchParams}: {searchParams : {name: string | un
     </h2>
     <FilterProjects />
     <div className='py-2'>
-      {ppp.map((project: any) =>(
+      {projects.map((project: any) =>(
         <Link href={'/projects/' + project.slug} passHref key={project.slug}>
           <div className='py-2 flex justify-between align-middle gap-2'>
             <div>
