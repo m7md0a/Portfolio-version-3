@@ -6,7 +6,7 @@ import FilterProjects from './_components/FilterProjects'
 
 export default function Home({searchParams}: {searchParams : {name: string | undefined}}) {
   const name = searchParams?.name?.trimStart().toLowerCase() || 'all';  
-  const projectsDir  = "./public/projects";
+  const projectsDir  = "public/projects";
   const files = fs.readdirSync(path.join(projectsDir));
 
   const projects = files.map((filename: string) => {
