@@ -3,15 +3,25 @@ import path from 'path'
 import matter from 'gray-matter'
 import Link from 'next/link'
 import FilterProjects from './_components/FilterProjects'
+import Project from './_components/Project'
+import { ProjectType } from '@/types'
+import ContainerApp from '@/components/ContainerApp'
+import Title from '@/components/Home/Title'
 
 export default function Projects () {
   const projectsDir  = "public/projects";
   const files = fs.readdirSync(path.join(projectsDir));
-  const projects = files.map((filename: string) => {
+  const projects = files.map((filename: string): ProjectType => {
     const fileContent = fs.readFileSync(path.join(projectsDir, filename), 'utf-8')
     const {data: frontMatter} = matter(fileContent);
     return {
-      meta: frontMatter,
+      meta: {
+        title: frontMatter.title,
+        date: frontMatter.date,
+        description: frontMatter.description,
+        technologies: frontMatter.technologies,
+        image: frontMatter.image
+      },
       slug: filename.replace('.mdx', '')
     }
   })
@@ -31,37 +41,13 @@ export default function Projects () {
   // }
   
   return (
-   <main className='flex flex-col'>
-    <h1 className='text-3xl font-bold'>
-      My Next.Js projects Site
-    </h1>
-
-    <section className='py-10'>
-    <h2 className='text-2xl font-blod'>
-      Latest projects
-    </h2>
-    <FilterProjects />
-    <div className='py-2'>
-      {projects.reverse().map((project: any) =>(
-        <Link href={'/projects/' + project.slug} passHref key={project.slug}>
-          <div className='py-2 flex justify-between align-middle gap-2'>
-            <div>
-              <h3 className='text-lg font-blod'>
-                {project.meta.title}
-              </h3>
-              <div>
-              
-                <p className='text-gray-400'>{project.meta.description}</p>
-              </div>
-              <div className='my-auto text-gray-400'>
-                <p>{project.meta.date}</p>
-              </div>
-             </div> 
-          </div>
-        </Link>
+   <ContainerApp className='max-w-[90rem]'>
+    <Title title='Latest projects' aligin='start' />
+    <div className='py-2 grid grid-cols-1 xl:grid-cols-2'>
+      {projects.reverse().map((project: ProjectType) =>(
+          <Project project={project} key={project.slug}/>
       ))}
     </div>
-    </section>
-   </main>
+   </ContainerApp>
   )
 }

@@ -145,3 +145,14 @@ export type ProfileType = {
   followers: number
   following: number
 }
+
+export type ProjectType = {
+  meta: {
+      title: string;
+      description: string;
+      date: string;
+      technologies: string[];
+      image: string
+  };
+  slug: string;
+}
