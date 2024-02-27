@@ -12,7 +12,7 @@ export default async function page() {
     <div className="pt-24 snap-y snap-mandatory">
       <Hero />
       <About />
-      <MyCom />
+      {/* <MyCom /> */}
       <Skills />
       <Experience />
       <LatestRepos />

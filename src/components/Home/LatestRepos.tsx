@@ -5,9 +5,11 @@ import Image from 'next/image'
 import Title from './Title'
 import { useEffect, useState } from 'react'
 import { PinnedRepoType } from '@/types'
+import { pinnedRepos } from '@/data/pinned'
+import { motion } from 'framer-motion'
 
 export default function LatestRepos() {
-  const [repos, setRepos] = useState<PinnedRepoType[] | undefined>(undefined)
+  const [repos, setRepos] = useState<PinnedRepoType[] | undefined>(pinnedRepos)
   async function getData() {
     const data  = await getPinnedProjects()
     setRepos(data)
@@ -15,13 +17,35 @@ export default function LatestRepos() {
   useEffect(() => {
     getData();
   }, [])
+  
+  const container = {
+    hidden: { opacity: 1, scale: 0 },
+      visible: {
+        opacity: 1,
+        scale: 1,
+        transition: {
+          delayChildren: 0.4,
+          staggerChildren: 0.3
+        }
+      }
+    };
+    const item = {
+      hidden: { y: 20, opacity: 0 },
+      visible: {
+        y: 0,
+        opacity: 1
+      }
+    }
   return repos && (
     <ContainerApp >
         <Title title='Latest Repos'/>
-        <div className="grid md:grid-cols-2 gap-2">
-          {repos.slice(0, 6).map(repo => (
-            <div key={repo.name} className="bg-white border space-y-1 rounded p-4 hover:border-blue-500 duration-200">
-              {/* // <Image width={50} height={50} alt="d" src={`https://raw.githubusercontent.com/m7md0a/Portfolio-By-Nextjs/main/screenshot.webp`} /> */}
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="visible"
+          className="grid md:grid-cols-2 gap-2">
+          {repos.slice(0, 6).map((repo, index) => (
+            <motion.div variants={item} transition={{duration: .3}} key={repo.name} className="bg-white border space-y-1 rounded p-4 hover:border-blue-500 duration-200">
               <a href={repo.url}>
                 <h2 className="font-semibold text-primary">{repo.name}</h2>
               </a>
@@ -50,12 +74,12 @@ export default function LatestRepos() {
                   <span>m7md0a</span>
                 </a>
               </div>
-            </div> 
+            </motion.div> 
           ))}
           <div className='col-span-full flex justify-end'>
             <a href='https://github.com/m7md0a?tab=repositories' className='text-white bg-primary/95 hover:bg-primary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'>All Repos</a>
           </div>
-        </div>
+        </motion.div>
     </ContainerApp>  
   )
 }
