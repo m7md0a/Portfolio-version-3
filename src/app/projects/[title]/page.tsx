@@ -4,6 +4,7 @@ import matter from 'gray-matter'
 import { Params } from 'next/dist/shared/lib/router/utils/route-matcher';
 import { notFound } from 'next/navigation';
 import MarkdownContent from './_components/MarkdownContent';
+import ContainerApp from '@/components/ContainerApp';
 
 
 const projectsDir  = "public/projects/";
@@ -34,11 +35,11 @@ function getProject(title :string){
 export default function page({params}: {params: Params}) {
     const project = getProject(params.title)
     return (
-        <div>
+        <ContainerApp>
             <article className='mx-auto'>
                 <h1>{project.fontMatter.title}</h1>
                 <MarkdownContent content={project.content} />
             </article>
-        </div>
+        </ContainerApp>
     )
 }

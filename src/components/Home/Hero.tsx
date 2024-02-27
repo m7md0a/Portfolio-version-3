@@ -18,10 +18,10 @@ export default function Hero() {
             className="inline-flex justify-between items-center py-1 px-1 pe-4 mb-7 text-sm text-blue-700 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800"
           >
             <span className="text-xs bg-blue-600 rounded-full text-white px-4 py-1.5 me-3">
-              جديد
+              New
             </span>{" "}
             <span className="text-sm font-medium">
-              مشروع جديد يمكنك مشاهدته
+              New Project
             </span>
             <svg
               className="w-2.5 h-2.5 ms-2 rtl:rotate-180"
@@ -39,8 +39,8 @@ export default function Hero() {
               />
             </svg>
           </Link>
-          <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl lg:text-6xl bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 text-transparent bg-clip-text">
-            Front End Developer
+          <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl lg:text-6xl bg-gradient-to-r from-blue-400 via-blue-500 to-blue-700 text-transparent bg-clip-text">
+            Mohamed Abdelrahman
           </h1>
           <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-200">
           Hello i&apos;m Mohamed Abdelrahman Web Developer from Elminya - Egypt.

@@ -21,12 +21,12 @@ export default function RootLayout({
   return (
     <html lang="en" dir="ltr">
       <body className={inter.className}>
-        <NextTopLoader color='red' />
+        <NextTopLoader color='#2563eb' />
         <Header />
         <div className="pt-20">
           {children}
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );

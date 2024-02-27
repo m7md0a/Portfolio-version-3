@@ -15,7 +15,7 @@ export default function Header() {
             <Image
               width={40}
               height={40}
-              src="https://avatars.githubusercontent.com/u/54208900?v=4"
+              src="/icons/typescript.svg"
               className="h-8 rounded-full"
               alt="Logo"
             />

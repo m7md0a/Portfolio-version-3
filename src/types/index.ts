@@ -152,7 +152,8 @@ export type ProjectType = {
       description: string;
       date: string;
       technologies: string[];
-      image: string
+      image: string;
+      link?: string; 
   };
   slug: string;
 }

@@ -32,11 +32,13 @@ export default function Project({ project }: ProjectProps) {
         <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-odd:ml-[18rem]">
           <Link
             className="cursor-pointer  hover:underline"
-            href={'/projects/' + project.slug} passHref key={project.slug}
+            href={project.meta.link || '/projects/' + project.slug} passHref key={project.slug}
           >
             <h3 className="text-2xl font-semibold text-blue-600">{project.meta.title}</h3>
           </Link>
-
+          <div>
+            <time className="text-sm text-gray-500">{project.meta.date}</time>
+          </div>
           <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70 text-sm line-clamp-[8]">
             {project.meta.description}
           </p>

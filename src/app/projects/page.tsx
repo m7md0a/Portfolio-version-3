@@ -20,7 +20,8 @@ export default function Projects () {
         date: frontMatter.date,
         description: frontMatter.description,
         technologies: frontMatter.technologies,
-        image: frontMatter.image
+        image: frontMatter.image,
+        link: frontMatter.link
       },
       slug: filename.replace('.mdx', '')
     }
