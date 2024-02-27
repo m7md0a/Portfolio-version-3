@@ -9,7 +9,7 @@ export default function Hero() {
           <div className="relative w-40 h-40 mx-auto mb-20">
             <Image width={350} height={350}
               className="w-40 h-40 rounded-full"
-              src="https://avatars.githubusercontent.com/u/54208900?v=4"
+              src="/images/m7md0a.webp"
               alt="This is my photo"
             />
             <span className="bottom-0 right-0 absolute text-2xl bg-white bg-opacity-50 backdrop-blur-xl p-1 rounded">👋</span>

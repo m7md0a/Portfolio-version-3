@@ -4,22 +4,7 @@ import Image from 'next/image'
 import Title from './Title'
 
 export default async function LatestRepos() {
-  const repos  = await getRepos() /* [
-    {
-      id: 4,
-      html_url: 'd',
-      full_name: 'd',
-      description: 'dmmdocjnc ocnoce kednnsc jwcon ',
-      language: 'edd',
-      forks: 's',
-      owner :{
-        login: 'd',
-        html_url: 'd',
-        avatar_url: 'https://avatars.githubusercontent.com/54208900'
-      },
-      topics: ['dm', "dijdn"]
-    }
-  ]*/
+  const repos  = await getRepos()
 
   return repos && (
     <ContainerApp >
