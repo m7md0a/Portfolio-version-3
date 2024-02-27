@@ -1,7 +1,18 @@
+'use client'
 import { getProfileData } from "@/axios";
+import { ProfileType } from "@/types";
+import { useEffect, useState } from "react";
 
-export default async function Footer() {
-    const profile = await getProfileData()    
+export default function Footer() {
+  const [profile, setProfile] = useState<ProfileType | undefined>(undefined)
+  async function getData() {
+    const data = await getProfileData()    
+    setProfile(data)
+  }
+  useEffect(() => {
+    getData();
+  }, [])
+  
   return (
     <div>
       <div className="border-t flex justify-center p-5">

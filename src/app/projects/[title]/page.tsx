@@ -22,6 +22,9 @@ function getProject(title :string){
     try {
         const markdownFile = fs.readFileSync(path.join(projectsDir, title + '.mdx'), 'utf-8')
         const{data: fontMatter, content} = matter(markdownFile)
+        if (fontMatter.link) {
+            notFound()
+        }
         return {
             fontMatter,
             title,
@@ -33,9 +36,9 @@ function getProject(title :string){
 }
 
 export default function page({params}: {params: Params}) {
-    const project = getProject(params.title)
+    const project = getProject(params.title)    
     return (
-        <ContainerApp>
+        <ContainerApp className="pt-20 min-h-[82vh]">
             <article className='mx-auto'>
                 <h1>{project.fontMatter.title}</h1>
                 <MarkdownContent content={project.content} />

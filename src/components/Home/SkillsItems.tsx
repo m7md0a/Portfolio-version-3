@@ -16,7 +16,6 @@ export default function SkillsItems({skills}: {skills: SkillType[]}) {
           }
         }
       };
-      
       const item = {
         hidden: { y: 20, opacity: 0 },
         visible: {

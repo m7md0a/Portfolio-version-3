@@ -1,8 +1,6 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import Link from 'next/link'
-import FilterProjects from './_components/FilterProjects'
 import Project from './_components/Project'
 import { ProjectType } from '@/types'
 import ContainerApp from '@/components/ContainerApp'
@@ -42,7 +40,7 @@ export default function Projects () {
   // }
   
   return (
-   <ContainerApp className='max-w-[90rem]'>
+   <ContainerApp className='max-w-[90rem] min-h-[85vh]'>
     <Title title='Latest projects' aligin='start' />
     <div className='py-2 grid grid-cols-1 xl:grid-cols-2'>
       {projects.reverse().map((project: ProjectType) =>(

@@ -1,4 +1,5 @@
 import { TimeLineType } from "@/types";
+import React from "react";
 
 export const timeline: TimeLineType[] = [
     {
@@ -8,6 +9,7 @@ export const timeline: TimeLineType[] = [
         easy, with different themes to keep the user engaged. Uses React.js for speed and TypeScript to improve
         code quality.`],
         date: 'December 2023',
+        icon: '/icons/reactjs.svg',
         links: [
             {
                 title: 'GitHub Repo',
@@ -27,6 +29,7 @@ export const timeline: TimeLineType[] = [
     a manual account.`, `Within the website, the email and password are displayed to ensure users don’t forget them, and can be
     copied to a secure location`],
         date: 'November 2023',
+        icon: '/icons/reactjs.svg',
         links: [
             {
                 title: 'GitHub Repo',
@@ -42,6 +45,7 @@ export const timeline: TimeLineType[] = [
         title: 'learn web development',
         descriptions: [`I started learning programming and then programming projects that can be viewed`],
         date: 'March 2019',
+        icon: '/icons/javascript.svg',
         links: [
             {
                 title: 'My Resume',
@@ -52,6 +56,7 @@ export const timeline: TimeLineType[] = [
     {
         title: 'Business Administration.',
         descriptions: [`In 2018 I started studying administrative sciences in 2022 I got a bachelor of business administration.`],
-        date: 'June 2022'
+        date: 'June 2022',
+        icon: '/icons/cap.svg'
     }
 ]

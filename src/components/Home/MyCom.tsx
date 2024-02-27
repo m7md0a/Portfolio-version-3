@@ -2,12 +2,11 @@ import React from 'react'
 import ContainerApp from '../ContainerApp'
 
 export default function MyCom() {
-    const images =  [1,2,3,4]
+    const images =  [1,2,3,4,5,6,7,8,9,10]
 
     function getCol(colIndex: number) {
         return images.filter((resource:any, index: number)=>{
             if (index === 0 && colIndex === 1) {
-                console.log(resource);
                 return true
             }
             else if (index != 0){

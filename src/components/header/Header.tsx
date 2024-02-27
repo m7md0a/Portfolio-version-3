@@ -12,15 +12,13 @@ export default function Header() {
             href="/"
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
-            <Image
-              width={40}
-              height={40}
-              src="/icons/typescript.svg"
-              className="h-8 rounded-full"
-              alt="Logo"
+            <Image width={32} height={32}
+              className="w-8 h-8 rounded-full"
+              src="/images/m7md0a.webp"
+              alt="This is my photo"
             />
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-              Portfolio v3
+              {/* Mohamed */}
             </span>
           </Link>
           <div className="flex md:order-2 space-x-3 rtl:space-x-reverse ">

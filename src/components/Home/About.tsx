@@ -19,8 +19,8 @@ import Image from 'next/image'
                     </p>
                 </blockquote>
                 <figcaption className="flex items-center justify-center mt-6 space-x-3 rtl:space-x-reverse">
-                    <Image width={40} height={40} className="w-6 h-6 rounded-full" src="https://avatars.githubusercontent.com/54208900" alt="profile picture" />
-                    <div className="flex items-center divide-x-2 rtl:divide-x-reverse divide-gray-500 dark:divide-gray-700">
+                    <Image width={40} height={40} className="w-6 h-6 rounded-full hidden md:block" src="https://avatars.githubusercontent.com/54208900" alt="profile picture" />
+                    <div className="flex flex-col md:flex-row items-center md:divide-x-2 md:rtl:divide-x-reverse divide-gray-500 dark:divide-gray-700">
                         <cite className="pe-3 font-medium text-gray-900 dark:text-white">Mohamed Abdelrahman</cite>
                         <cite className="ps-3 text-sm text-gray-500 dark:text-gray-400">Web Developer</cite>
                     </div>

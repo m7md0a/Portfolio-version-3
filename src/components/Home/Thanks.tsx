@@ -1,5 +1,6 @@
 import React from "react";
 import ContainerApp from "../ContainerApp";
+import Title from "./Title";
 
 export default function Thanks() {
   return (
@@ -7,17 +8,17 @@ export default function Thanks() {
       <div>
         <div className="grow flex flex-col items-center w-full">
           <div className="text-center flex flex-col items-center space-y-4 py-8">
-            <h1 className="text-blue-800 text-4xl font-semibold italicd">Thank you !</h1>
+            <Title className="font-bold" title="Thank you !"/>
             <p className="md:w-3/5 text-xl text-gray-700">
               If you want me to help you with something, or you want to ask me a
               question, or you have a job opportunity that you can help me with,
               I will be happy to contact you anyway Thank you !
             </p>
             <a href="mailto:m7md0a.work@gmail.com">
-              <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-3">Send Email</button>
+              <button className="btn btn-primary">Send Email</button>
             </a>
           </div>
-          <div className="flex justify-between flex-wrap w-full md:w-3/5 [&>a>svg]:w-9 [&>a>svg]:h-9 md:[&>a>svg]:w-12 md:[&>a>svg]:h-12 text-blue-800">
+          <div className="flex justify-between flex-wrap w-full md:w-3/5 [&>a>svg]:w-9 [&>a>svg]:h-9 md:[&>a>svg]:w-12 md:[&>a>svg]:h-12">
             <a
               rel="noopener noreferrer"
               target="_blank"
@@ -25,7 +26,7 @@ export default function Thanks() {
               className="link link-hover"
             >
               <svg
-                className="media p-2 text-primary "
+                className="media p-2 text-primary"
                 fill="currentColor"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 30 30"
@@ -55,7 +56,7 @@ export default function Thanks() {
                 fill="currentColor"
               >
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M5.404 14.596A6.5 6.5 0 1116.5 10a1.25 1.25 0 01-2.5 0 4 4 0 10-.571 2.06A2.75 2.75 0 0018 10a8 8 0 10-2.343 5.657.75.75 0 00-1.06-1.06 6.5 6.5 0 01-9.193 0zM10 7.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5z"
                   clipRule="evenodd"
                 ></path>

@@ -9,7 +9,16 @@ const config = {
     './src/**/*.{ts,tsx}',
 	],
   prefix: "",
-  theme: {},
+  theme: {
+    extend: {
+      colors: {
+        'primary': '#2563eb',
+        'secondary': '#8f94fb',
+        'two': '#3b82f6',
+        'three': '#1d4ed8',
+      },
+    }
+  },
   plugins: [],
 } satisfies Config
 
