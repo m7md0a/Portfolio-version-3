@@ -1,6 +1,7 @@
 import React from "react";
 import ContainerApp from "../ContainerApp";
 import Title from "./Title";
+import ThanksText from "./ThanksText";
 
 export default function Thanks() {
   return (
@@ -9,11 +10,7 @@ export default function Thanks() {
         <div className="grow flex flex-col items-center w-full">
           <div className="text-center flex flex-col items-center space-y-4 py-8">
             <Title className="font-bold" title="Thank you !"/>
-            <p className="md:w-3/5 text-xl text-gray-700">
-              If you want me to help you with something, or you want to ask me a
-              question, or you have a job opportunity that you can help me with,
-              I will be happy to contact you anyway Thank you !
-            </p>
+            <ThanksText />
             <a href="mailto:m7md0a.work@gmail.com">
               <button className="btn btn-primary">Send Email</button>
             </a>

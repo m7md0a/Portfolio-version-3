@@ -3,10 +3,10 @@ import { getPinnedProjects } from '@/axios'
 import ContainerApp from '../ContainerApp'
 import Image from 'next/image'
 import Title from './Title'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { PinnedRepoType } from '@/types'
 import { pinnedRepos } from '@/data/pinned'
-import { motion } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 
 export default function LatestRepos() {
   const [repos, setRepos] = useState<PinnedRepoType[] | undefined>(pinnedRepos)
@@ -17,35 +17,24 @@ export default function LatestRepos() {
   useEffect(() => {
     getData();
   }, [])
-  
-  const container = {
-    hidden: { opacity: 1, scale: 0 },
-      visible: {
-        opacity: 1,
-        scale: 1,
-        transition: {
-          delayChildren: 0.4,
-          staggerChildren: 0.3
-        }
-      }
-    };
-    const item = {
-      hidden: { y: 20, opacity: 0 },
-      visible: {
-        y: 0,
-        opacity: 1
-      }
-    }
+
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["0 1", "1.33 1"],
+  });
+  const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.7, 1]);
   return repos && (
     <ContainerApp >
         <Title title='Latest Repos'/>
-        <motion.div
-          variants={container}
-          initial="hidden"
-          animate="visible"
+        <motion.div  ref={ref}
+      style={{
+        scale: scaleProgess,
+        // opacity: opacityProgess,
+      }}
           className="grid md:grid-cols-2 gap-2">
           {repos.slice(0, 6).map((repo, index) => (
-            <motion.div variants={item} transition={{duration: .3}} key={repo.name} className="bg-white border space-y-1 rounded p-4 hover:border-blue-500 duration-200">
+            <motion.div key={repo.name} className="bg-white border space-y-1 rounded p-4 hover:border-blue-500 duration-200">
               <a href={repo.url}>
                 <h2 className="font-semibold text-primary">{repo.name}</h2>
               </a>

@@ -5,10 +5,10 @@ import { Params } from 'next/dist/shared/lib/router/utils/route-matcher';
 import { notFound } from 'next/navigation';
 import MarkdownContent from './_components/MarkdownContent';
 import ContainerApp from '@/components/ContainerApp';
+import { convertDate } from '../_components/convertDate';
 
 
 const projectsDir  = "public/projects/";
-
 
 export async function generateStaticParams(){
     const files =fs.readdirSync(path.join(projectsDir))
@@ -38,9 +38,11 @@ function getProject(title :string){
 export default function page({params}: {params: Params}) {
     const project = getProject(params.title)    
     return (
-        <ContainerApp className="pt-20 min-h-[82vh]">
+        <ContainerApp className="pt-10 min-h-[82vh]">
             <article className='mx-auto'>
-                <h1>{project.fontMatter.title}</h1>
+                <div className='flex justify-end md:-mb-7'>
+                    <time className='text-sm text-gray-400'>{convertDate(project.fontMatter.date)}</time>
+                </div>
                 <MarkdownContent content={project.content} />
             </article>
         </ContainerApp>
