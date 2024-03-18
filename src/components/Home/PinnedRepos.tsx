@@ -1,40 +1,18 @@
-'use client'
 import { getPinnedProjects } from '@/axios'
 import ContainerApp from '../ContainerApp'
 import Image from 'next/image'
 import Title from './Title'
-import { useEffect, useRef, useState } from 'react'
-import { PinnedRepoType } from '@/types'
-import { pinnedRepos } from '@/data/pinned'
-import { motion, useScroll, useTransform } from 'framer-motion'
 
-export default function LatestRepos() {
-  const [repos, setRepos] = useState<PinnedRepoType[] | undefined>(pinnedRepos)
-  async function getData() {
-    const data  = await getPinnedProjects()
-    setRepos(data)
-  }
-  useEffect(() => {
-    getData();
-  }, [])
+export default async function PinnedRepos() {
+  const repos = await getPinnedProjects()
 
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["0 1", "1.33 1"],
-  });
-  const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.7, 1]);
+  
   return repos && (
     <ContainerApp >
-        <Title title='Latest Repos'/>
-        <motion.div  ref={ref}
-      style={{
-        scale: scaleProgess,
-        // opacity: opacityProgess,
-      }}
-          className="grid md:grid-cols-2 gap-2">
+        <Title title='Pinned Repos'/>
+        <div className="grid md:grid-cols-2 gap-2">
           {repos.slice(0, 6).map((repo, index) => (
-            <motion.div key={repo.name} className="bg-white border space-y-1 rounded p-4 hover:border-blue-500 duration-200">
+            <div key={repo.name} className="bg-white border space-y-1 rounded p-4 hover:border-blue-500 duration-200">
               <a href={repo.url}>
                 <h2 className="font-semibold text-primary">{repo.name}</h2>
               </a>
@@ -63,12 +41,12 @@ export default function LatestRepos() {
                   <span>m7md0a</span>
                 </a>
               </div>
-            </motion.div> 
+            </div> 
           ))}
           <div className='col-span-full flex justify-end'>
             <a href='https://github.com/m7md0a?tab=repositories' className='text-white bg-primary/95 hover:bg-primary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'>All Repos</a>
           </div>
-        </motion.div>
+        </div>
     </ContainerApp>  
   )
 }

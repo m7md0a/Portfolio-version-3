@@ -43,12 +43,7 @@ export default function Hero() {
             Mohamed Abdelrahman
           </h1>
           <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-200">
-          Hello i&apos;m Mohamed Abdelrahman Web Developer from Elminya - Egypt.
-          I have rich experience in web site design and building.
-          also i am good at ReactJs and NextJs.
-          I specialize in front-end technologies, and I&apos;m especially proficient with React & TypeScript.
-          I love to talk with you about our unique.
-          I help you build brand for your business
+          I am Mohamed Abdelrahman, a web developer focusing on designing websites with a beautiful interface design
           </p>
           <div className='flex justify-center gap-3'>
             <a href='/files/mohamed-abdelrahman.pdf' target='_blank' className='px-5 py-3 bg-white text-gray-600 font-bold hover:text-primary hover:scale-[1.15] transition focus:ring-4 focus:outline-none focus:ring-primary/20 rounded-full flex items-center gap-x-1'>

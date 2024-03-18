@@ -32,7 +32,7 @@ export default function Project({ project }: ProjectProps) {
       <section className="flex flex-col-reverse sm:flex-row bg-gray-100 max-w-[42rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[22rem] hover:bg-gray-200 transition sm:group-odd:pl-8 dark:text-white dark:bg-white/10 dark:hover:bg-white/20 w-full">
         <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-odd:ml-[18rem]">
           <Link
-            className="cursor-pointer  hover:underline"
+            className="cursor-pointer  hover:underline" target={project.meta.link ? '_blank' : '_parent'}
             href={project.meta.link || '/projects/' + project.slug} passHref key={project.slug}
           >
             <h3 className="text-2xl font-semibold text-blue-600">{project.meta.title}</h3>
@@ -57,7 +57,7 @@ export default function Project({ project }: ProjectProps) {
           </div>
         </div>
         <Link
-            className="cursor-pointer"
+            className="cursor-pointer" target={project.meta.link ? '_blank' : '_parent'}
             href={project.meta.link || '/projects/' + project.slug} passHref key={project.slug}
           >
             <Image
