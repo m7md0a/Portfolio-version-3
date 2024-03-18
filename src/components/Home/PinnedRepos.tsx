@@ -6,14 +6,13 @@ import Title from './Title'
 export default async function PinnedRepos() {
   const repos = await getPinnedProjects()
 
-  
   return repos && (
     <ContainerApp >
         <Title title='Pinned Repos'/>
         <div className="grid md:grid-cols-2 gap-2">
           {repos.slice(0, 6).map((repo, index) => (
             <div key={repo.name} className="bg-white border space-y-1 rounded p-4 hover:border-blue-500 duration-200">
-              <a href={repo.url}>
+              <a href={repo.url} target='_blank'>
                 <h2 className="font-semibold text-primary">{repo.name}</h2>
               </a>
               <p className="text-sm line-clamp-2 text-black/60">{repo.description}</p>
@@ -23,7 +22,7 @@ export default async function PinnedRepos() {
                 ))}
               </div>
               <div className="flex gap-x-6 text-xs mt-2 -mb-2 items-center">
-                <a href={repo.home} className="text-primary hover:underline">
+                <a href={repo.home} target='_blank' className="text-primary hover:underline">
                   <span>Preview</span>
                 </a>
                 <div className="flex gap-x-1 text-black/50 items-center">
